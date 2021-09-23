@@ -1,8 +1,6 @@
-package com.rodney.myproject;
-
 import java.util.Scanner;
 
-class pizza {
+class Pizza {
 	
 	public static void main(String[] args) {
 		int pizza = 355;
@@ -12,10 +10,11 @@ class pizza {
 		System.out.print("Number of pizza you ate: ");
 		int pizzaCount = scanner.nextInt();
 		
-		int hours = pizza*pizzaCount/550;
+		int hours = pizza*pizzaCount/cycleOneHour;
 		double minutes = Math.round((pizza*pizzaCount%550.0)/550.0*60.0);
 		
 		System.out.println("You need "+hours+" hours "+ (int)minutes+" minues to burn the calories of "+3+" pizzas.");
+		scanner.close();
 	}
 
 }

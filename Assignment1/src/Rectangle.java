@@ -1,8 +1,6 @@
-package com.rodney.myproject;
-
 import java.util.Scanner;
 
-class rectangle {
+class Rectangle {
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
@@ -17,6 +15,8 @@ class rectangle {
 		
 		System.out.println("The area of rectange %s by %s is %s".formatted(width,length,area));
 		System.out.println("The perimeter of rectange %s by %s is %s".formatted(width,length,perimeter));
+		
+		scanner.close();
 	}
 
 }
