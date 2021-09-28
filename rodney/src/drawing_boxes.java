@@ -1,4 +1,4 @@
-package com.rodney.myproject;
+
 
 class drawing_boxes {
 	
