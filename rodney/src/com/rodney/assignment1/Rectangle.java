@@ -1,3 +1,4 @@
+package com.rodney.assignment1;
 import java.util.Scanner;
 
 class Rectangle {

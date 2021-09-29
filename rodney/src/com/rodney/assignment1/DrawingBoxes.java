@@ -1,3 +1,4 @@
+package com.rodney.assignment1;
 
 public class DrawingBoxes {
 
