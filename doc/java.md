@@ -59,3 +59,8 @@ B-->C & D & E
 7. variable scope: instance level, class level, local method level.
 
 Java compile source code (.java) to byte code (.class), JRE can only run class file.
+
+## Data type
+1. primitive data type (boolean, byte, char, short, int, long, float, double)
+2. Java defined data type (String, Scanner, System, ...)
+3. Developer define data type
