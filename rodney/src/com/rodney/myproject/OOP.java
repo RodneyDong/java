@@ -1,4 +1,4 @@
-package com.john.myproject;
+package com.rodney.myproject;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -16,6 +16,9 @@ public class OOP { // Object Oriented Programming (class: name, attribute/variab
 		String s4 = new String("Rodney");
 		System.out.println(s3==s4);  // same value but different object
 
+		int a = 5;
+		a = 10;
+		int b = 10;
 		s3 = "Rodney"; // "Rodney" is a constant string value
 		s4 = "Rodney";
 		System.out.println(s3==s4);

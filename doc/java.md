@@ -62,5 +62,70 @@ Java compile source code (.java) to byte code (.class), JRE can only run class f
 
 ## Data type
 1. primitive data type (boolean, byte, char, short, int, long, float, double)
-2. Java defined data type (String, Scanner, System, ...)
-3. Developer define data type
+2. Java defined data type (String, Scanner, System, ...); new <class name>
+3. Developer defined data type; new <class name>
+
+## Operator
+1. arithmetic (+, -, *, /, %)
+2. assignment (=, +=, -=, *=, /=, %=)
+3. logical (&&, ||)
+4. comparison (<, >, <=, >=, ==)
+5. binary (++, --)
+6. ternary: a<b?a:b
+7. bitwise: &, |, ^
+8. precedence: 先*,/；后+-; ()
+
+## Execution Control
+* if-else if-else
+* switch
+
+## Loop
+* for loop, 
+* for-each
+* while loop
+* do-while loop
+* continue; break
+
+## OOP
+1. Abstraction (把从实际生活中的实体编写成class，为你所用)
+2. Inheritence （把共同的东西总结到super class，save coding）
+3. Encapsulation (protect attribute to be accessed by outside)
+4. Polymorphism (多样性，give different answer by the same quetion)
+
+* 3 different class type
+1. interface
+2. abstract class
+3. concrete class
+
+* interface only define signature of methods with no method body.
+* cannot use interface to instantiate an interface type.
+
+```mermaid
+classDiagram
+
+class Person{
+    name:String
+    ssn:String
+    age:int
+    gender:String
+    getOccupation()
+}
+
+class Doctor{
+    getOccupation()
+}
+class Teacher{
+    getOccupation()
+}
+
+Person <|-- Doctor: doctor is a person
+Person <|-- Teacher: teacher is a person
+```
+
+❓ what is an interface?
+✔️the **interface** is special java data type which only define method signature (finger print) without implementation or some constant variables.
+
+**implements** is java reserved keywords which means the class need implement all methods defined in the interface or itself must to be abstract.
+
+❓ what is an abstract class?
+✔️ Abstract class is similar to interface which cannot be used to create object. It may contain a mix of methods with or without implementation. It is not completed class, this is why cannot use it to create an object. It can define common used methods.
