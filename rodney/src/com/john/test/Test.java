@@ -5,7 +5,7 @@ import com.john.myproject.*;
 public class Test {
 
 	public static void main(String[] args) {
-		Doctor d = new Doctor();
+		Doctor d = new Doctor("John");
 		System.out.println(d.getOccuption());
 		double d1 = d.add(1.1, 2.2);
 		System.out.println(d1);
@@ -17,6 +17,7 @@ public class Test {
 		i = t.add(3, 4);
 		System.out.println(i);
 		System.out.println(t);
+		com.john.myproject.Test.printOccupation(d);
 	}
 
 }

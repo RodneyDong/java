@@ -7,6 +7,10 @@ public class Teacher extends Person {
 		this.ssn = ssn;
 	}
 	
+	public Teacher() { // default contructor
+		
+	}
+	
 	@Override
 	public String getOccuption() {
 		// TODO Auto-generated method stub
@@ -21,8 +25,9 @@ public class Teacher extends Person {
 
 	@Override
 	public String toString() { // return a string represent this object
-		return "Teacher [name=" + name + ", ssn=" + ssn + "]";
+		return "Teacher [name=" + name + ", age=" + age + "]";
 	}
+
 	
 	
 }
