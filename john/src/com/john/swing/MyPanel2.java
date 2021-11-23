@@ -11,6 +11,12 @@ import java.util.Random;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+/**
+ * Random moving image
+ * 
+ * @author John
+ *
+ */
 public class MyPanel2 extends JPanel implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private final int DELAY = 100;

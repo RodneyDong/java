@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Test {
@@ -62,8 +63,7 @@ public class Test {
 		System.out.println(op.add(2.1, 3.2));
 	}
 	
-	public static void main(String[] args) {
-				
+	static void testMathOpertion() {
 		doMath(new MathOperation() {
 
 			public double add(double x, double y) {
@@ -88,6 +88,38 @@ public class Test {
 			}
 			
 		});
+		
+	}
+	
+	public static void main(String[] args) {
+		// use LinkedList as Stack(last-in-first-out (LIFO)): push() and pop()
+		// use LinkedList as Queue(FIFO (first-in-first-out)): add() and pop()
+		LinkedList<Teacher> list = new LinkedList<>();
+		Teacher t1 = new Teacher("Rodney","111"); // top of stack represent of the list, first in linked list
+		Teacher t2 = new Teacher("John","111");
+		Teacher t3 = new Teacher("Charles","111"); // bottom of the stack
+//		System.out.println(list);
+//		Teacher t = list.poll();
+//		System.out.println(t);
+//		Collections.sort(list);
+//		System.out.println(list);
+//		list.push(new Teacher("Bob","222"));
+//		Teacher t = list.pop();
+//		System.out.println(t);
+		
+		// Queue (FIFO)
+		list.add(t1);
+		list.add(t2);
+		list.add(t3);
+		Teacher t = list.pop();
+		System.out.println(t);
+		System.out.println(list);
+		t = list.pop();
+		System.out.println(t);
+		System.out.println(list);
+		
+		// Statck (FILO)
+		
 	}
 
 }

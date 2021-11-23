@@ -9,6 +9,12 @@ import java.net.URL;
 
 import javax.swing.JPanel;
 
+/**
+ * key controlled image moving
+ * 
+ * @author John
+ *
+ */
 public class MyPanel3 extends JPanel {
 	private static final long serialVersionUID = 1L;
 	final int LEFT = 0;
