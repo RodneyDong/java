@@ -1,52 +1,71 @@
 package com.john.myproject;
 
-public class LinkedList {
-	Node head; //
-	Node tail; 
+public class LinkedList<T> {
+	private Node<T> head; //
+	private Node<T> tail; 
 	
-	public void add(Node node) {
+	public void add(Node<T> node) {
 		if(head==null) {
 			this.head = node;
 			this.tail = node;
 		}else {
-			tail.next = node;
-			node.next = null;
+			tail.setNext(node);
+			tail = node;
+			node.setNext(null);
 		}
 	}
 	
-	public void insert(Node node, Node newNode) { // insert a new node before node : homework1 implement this method
-		
+	public void insert(Node<T> node, Node<T> newNode) { // insert a new node before node : homework1 implement this method
+		newNode.setNext(node.getNext());
+		node.setNext(newNode);
 	}
 	
-	public Node next(Node node) {
-		return null;
+	public Node<T> next(Node<T> node) {
+		return node.getNext();
 	}
 	
+	
+	public Node<T> getHead() {
+		return head;
+	}
+
+	public void setHead(Node<T> head) {
+		this.head = head;
+	}
+
+	public Node<T> getTail() {
+		return tail;
+	}
+
+	public void setTail(Node<T> tail) {
+		this.tail = tail;
+	}
+
 	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer(); // StringBuilder()
-		Node current = head;
-		while (current.next!=null) {
-			result.append(current.data);
-			current = current.next; // feature of linked list 
+		Node<T> current = head;
+		while (current.getNext()!=null) {
+			result.append(current.getData());
+			current = current.getNext(); // feature of linked list 
 		}
-		result.append(current.data);
+		result.append(current.getData());
 		return result.toString();
 	}
 
 
 	public static void main(String[] args) {
 		Node<Person> node = new Node<Person>(new Teacher("John"));
-		LinkedList list = new LinkedList();
+		LinkedList<Person> list = new LinkedList<>();
 		list.add(node);
-		node = new Node(new Teacher("Rodney"));
+		node = new Node<Person>(new Teacher("Rodney"));
 		list.add(node);
+		Node<Person> node1 = new Node<>(new Teacher("Bob"));
+		list.add(node1);
 		
-		list.insert(node, new Node(new Teacher("Charles"))); // John, Charles, Rodney
+		list.insert(node, new Node<Person>(new Teacher("Charles"))); // John, Charles, Rodney
 		
-		System.out.println(list);
-		
-		
+		System.out.println(list);		
 	}
 
 }

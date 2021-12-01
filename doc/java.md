@@ -209,14 +209,27 @@ input values must cover all possible input values
 * [Face.java](../john/src/com/john/blackjack/Face.java)
 * [Suit.java](../john/src/com/john/blackjack/Suit.java)
 
+## Data Structure
+* ![Stack](images/stack.jpeg)
+* ![Queue](images/queue.png)
+* [Linked List](../john/src/com/john/myproject/LinkedList.java)
+![](images/linkedList.png)
+* [Doubly Linked List](../john/src/com/john/myproject/DoublyLinkedList.java)
+![](images/doublyLinkedList.png)
+* ![binary search](images/binarySearch.png)
+* 
 ## Java GUI (swing)
 * [Open window](../john/src/com/john/swing/OpenWindow.java)
+
+### Basic Components
 * [AddButton.java](../john/src/com/john/swing/AddButton.java)
   1. Anonymous class (new interface with implementation)
 * [AddLabel.java](../john/src/com/john/swing/AddLabel.java)
 * [AddTextField.java](../john/src/com/john/swing/AddTextField.java)
 * [AddCheckBox.java](../john/src/com/john/swing/AddCheckBox.java)
 * [Frame.java](../john/src/com/john/swing/Frame.java)
+
+### Dispaly image on JPanel
 * [DisplayImage.java](../john/src/com/john/swing/DisplayImage.java)
 * [MyPanel.java](../john/src/com/john/swing/MyPanel.java)
 * [DisplayImageOnLabel](../john/src/com/john/swing/DisplayImageOnLabel.java)
@@ -228,4 +241,13 @@ input values must cover all possible input values
 * [Random moving panel](../john/src/com/john/swing/MyPanel2.java)
 * [Key control moving image](../john/src/com/john/swing/KeyControledImage.java)
 * [Key control panel](../john/src/com/john/swing/MyPanel3.java)
-* 
+* [Calculator](../john/src/com/john/swing/Calculator.java)
+
+### Layout
+* [Flow Layout](../john/src/com/john/swing/FlowLayoutExample.java)
+* [Border Layout](../john/src/com/john/swing/BorderLayoutExample.java)
+* [Embedded Border Layout](../john/src/com/john/swing/BorderLayoutExample1.java)
+* [Grid Layout](../john/src/com/john/swing/GridLayoutExample.java)
+* [Grid Bag Layout](../john/src/com/john/swing/GridBagLayoutExample.java)
+* [Box Layout]
+* [Group Layout]
