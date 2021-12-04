@@ -217,7 +217,10 @@ input values must cover all possible input values
 * [Doubly Linked List](../john/src/com/john/myproject/DoublyLinkedList.java)
 ![](images/doublyLinkedList.png)
 * ![binary search](images/binarySearch.png)
-* 
+  
+### Tree
+![](images/tree-1.webp)
+
 ## Java GUI (swing)
 * [Open window](../john/src/com/john/swing/OpenWindow.java)
 

@@ -1,10 +1,9 @@
+package com.john.swing;
 import java.awt.Toolkit;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-
-import com.john.swing.DisplayImageOnLabel;
 
 public class DisplayImageOnButton extends JFrame{
 	static final String FOLDER = "/Users/12818/workspace/Rodney/java/john/bin/com/john/swing/";
