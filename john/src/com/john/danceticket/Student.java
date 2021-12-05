@@ -48,6 +48,20 @@ public class Student implements Comparable<Student>{
 	}
 
 	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof Student) {
+			Student other = (Student)obj;
+			return id==other.getId();
+		}else
+		return false;
+	}
+
+	@Override
+	public int hashCode() {
+		return Integer.valueOf(id).hashCode();
+	}
+
+	@Override
 	public String toString() {
 		return "Student [id=" + id + "]";
 	}
@@ -87,7 +101,7 @@ public class Student implements Comparable<Student>{
 	 * @param current is current node
 	 * @param bw is output file BufferedWriter.
 	 */
-	private static void saveAll(Node current, BufferedWriter bw) {
+	private static void saveAll(Node<Student> current, BufferedWriter bw) {
 		if (current != null) {
 			saveAll(current.left, bw);
 			Student s = current.student;
