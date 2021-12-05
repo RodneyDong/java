@@ -187,3 +187,15 @@ class START start
 class EXIST if
 class FILE db
 ```
+
+## Java Docs
+```DOS
+Open DOS command window, cd to the folder below, type in javadoc command
+
+C:\Users\12818\workspace\Rodney\java\doc\danceticket>javadoc -sourcepath ../../john/src -subpackages com.john.danceticket
+```
+![](images/javadoc.png)
+
+Double click index.html file name
+
+![](images/index-html.png)
