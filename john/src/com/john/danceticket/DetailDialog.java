@@ -10,6 +10,14 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+/**
+ * This is a popup dialog window it allow user find a student by id,
+ * and update his/her dance ticket information, such as number of early bird tickets
+ * or number of door price tickets.
+ * 
+ * @author John
+ *
+ */
 public class DetailDialog extends JDialog implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private MainFrame parent; // Cross reference of parent frame.

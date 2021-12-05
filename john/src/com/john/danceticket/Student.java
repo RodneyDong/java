@@ -10,6 +10,12 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+/**
+ * Student class used to store student information about the dance tickets.
+ * 
+ * @author John
+ *
+ */
 public class Student implements Comparable<Student>{
 	public static final String filename = "tickets.csv";
 	private int id;

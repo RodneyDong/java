@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class RefundDialog extends JDialog implements ActionListener{
+	private static final long serialVersionUID = 1L;
 	private MainFrame parent;
 	private JTextField idTxt;
 	
@@ -22,6 +23,7 @@ public class RefundDialog extends JDialog implements ActionListener{
 		setTitle("Student Refund");
 		setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
+		this.parent.setStatus("You could use this dialog window get your tickets refund.");
 
 		JLabel idLbl = new JLabel("Student ID: ");
 		idTxt = new JTextField(10);

@@ -14,6 +14,13 @@ import javax.swing.JTextField;
 
 import com.john.danceticket.MainFrame.TicketType;
 
+/**
+ * This dialog window is used to sell tickets to student. Student
+ * need to provide his/her id, name, and number of tickets want to buy.
+ * 
+ * @author John
+ *
+ */
 public class TicketDialog extends JDialog implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	private JTextField idTxt, nameTxt;

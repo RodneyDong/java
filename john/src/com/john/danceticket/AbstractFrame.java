@@ -2,6 +2,13 @@ package com.john.danceticket;
 
 import javax.swing.JFrame;
 
+/**
+ * abstract frame class extends from JFrame, it include all basic setting for open a Window,
+ * and leave init() method as an abstract method for subclass to override.
+ * 
+ * @author John
+ *
+ */
 public abstract class AbstractFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	String title = "Dance Ticket";

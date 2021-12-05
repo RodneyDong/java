@@ -1,5 +1,12 @@
 package com.john.danceticket;
 
+/**
+ * Generic Node class for Binary Tree data structure.
+ * 
+ * @author John
+ *
+ * @param <T>
+ */
 public class Node<T> {
 	T student;
 	Node<T> left;

@@ -12,10 +12,13 @@ import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
+/**
+ * Main panel show in the center of window. it display dance party information.
+ * 
+ * @author John
+ *
+ */
 public class MainPanel extends JPanel {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	static final String imageFile = "dance.jpg";
 	private Image img;

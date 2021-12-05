@@ -2,6 +2,13 @@ package com.john.danceticket;
 
 import java.util.Queue;
 
+/**
+ * Binary tree class, include all methods for binary tree operation such as
+ * add, contains, remove, insert, size and more.
+ * 
+ * @author John
+ *
+ */
 public class BinaryTree {
 	Node<Student> root;
 

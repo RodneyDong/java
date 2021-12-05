@@ -20,6 +20,13 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
+/**
+ * MainFrame include menu system and dance party information.
+ * allow user to sell tickets to student, and refund their money and more.
+ * 
+ * @author John
+ *
+ */
 public class MainFrame extends AbstractFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	public enum TicketType {EARLY_BIRD, DOOR};

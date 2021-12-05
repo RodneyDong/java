@@ -1,5 +1,11 @@
 package com.john.danceticket;
 
+/**
+ * Test program to test add, contains, size, save, load, remove functions for BinaryTree.
+ * 
+ * @author John
+ *
+ */
 public class Test {
 
 	static BinaryTree testBinaryTreeAdd() {
