@@ -1,3 +1,7 @@
 .metadata/
 bin/
 *.log
+*.class
+*.zip
+build/
+dist/

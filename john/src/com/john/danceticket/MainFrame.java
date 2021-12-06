@@ -6,8 +6,16 @@ import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
+import java.util.logging.Logger;
 
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -21,22 +29,35 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 
 /**
- * MainFrame include menu system and dance party information.
- * allow user to sell tickets to student, and refund their money and more.
+ * MainFrame include menu system and dance party information. allow user to sell
+ * tickets to student, and refund their money and more.
  * 
  * @author John
  *
  */
 public class MainFrame extends AbstractFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
-	public enum TicketType {EARLY_BIRD, DOOR};
+	private static final String PROP_FILE = "resources/danceticket.properties";
+	static {
+		System.setProperty("java.util.logging.config.file", "/Users/12818/workspace/Rodney/java/john/conf/logging.properties");
+//		System.setProperty("java.util.logging.ConsoleHandler.level", "java.util.logging.Level.WARNING");
+	}
+	static Logger logger = Logger.getLogger("DANCE_TICKET");
+	
+	public enum TicketType {
+		EARLY_BIRD, DOOR
+	};
+
 	private JMenu ticket, find, help;
 	private JMenuItem earlyBird, door, refund, one, all, exit, about, content;
 	private MainPanel mainPnl;
 	private JTextField statusTxt;
-	
+	private Properties prop;
+
 	@Override
 	protected void init() {
+		loadProperties();
+		createDataFile();
 		Container root = getContentPane();
 		root.setLayout(new BorderLayout());
 
@@ -44,6 +65,33 @@ public class MainFrame extends AbstractFrame implements ActionListener {
 		buildMainPanel();
 		buildStatusPanel();
 		buildMenu();
+	}
+
+	private void createDataFile() {
+		logger.info("createDataFile()...");
+		File dataFile = new File(Student.filename);
+		if(!dataFile.exists()) {
+			try {
+				FileWriter out = new FileWriter(dataFile);
+				out.write("id,name,early bird,door price\n");
+				out.close();
+			} catch (IOException e) {
+				logger.severe(e.getMessage());
+			}
+		}
+		
+	}
+
+	private void loadProperties() {
+		logger.info("loadProperties() ...");
+		prop = new Properties();
+		URL propUrl = this.getClass().getResource(PROP_FILE);
+		try (InputStream input = new FileInputStream(propUrl.getFile())) {
+			// load a properties file
+			prop.load(input);
+		} catch (IOException ex) {
+			logger.severe(ex.getMessage());
+		}
 	}
 
 	private JMenuBar buildMenu() {
@@ -69,7 +117,7 @@ public class MainFrame extends AbstractFrame implements ActionListener {
 		all.addActionListener(this);
 		content.addActionListener(this);
 		about.addActionListener(this);
-		
+
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.add(ticket);
 		menuBar.add(find);
@@ -102,7 +150,7 @@ public class MainFrame extends AbstractFrame implements ActionListener {
 	}
 
 	private void buildMainPanel() {
-		mainPnl = new MainPanel();
+		mainPnl = new MainPanel(this); // build cross reference between MainFrame and MainPanel
 		add(mainPnl, BorderLayout.CENTER);
 	}
 
@@ -123,7 +171,7 @@ public class MainFrame extends AbstractFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		String item = e.getActionCommand();
 		JDialog dialog;
-		switch(item) {
+		switch (item) {
 		case "Early Bird":
 			dialog = new TicketDialog(TicketType.EARLY_BIRD, this);
 			dialog.setVisible(true);
@@ -145,6 +193,7 @@ public class MainFrame extends AbstractFrame implements ActionListener {
 			break;
 		case "Exit":
 			dispose();
+			break;
 		case "About":
 			about();
 			break;
@@ -155,40 +204,41 @@ public class MainFrame extends AbstractFrame implements ActionListener {
 			return;
 		}
 	}
-	
+
 	private void content() {
-		JOptionPane.showMessageDialog(this,"Help content will be coming soon...");
+		JOptionPane.showMessageDialog(this, "Help content will be coming soon...");
 	}
 
 	private void about() {
-		JOptionPane.showMessageDialog(this, "This is a homework assigned by Mr. xxxxx\nIt is using Binary Tree to store student information.\n\n Version 1.0");
+		JOptionPane.showMessageDialog(this,
+				"This is a homework assigned by Mr. xxxxx\nIt is using Binary Tree to store student information.\n\n Version 1.0");
 	}
 
 	private void displayAll() {
 		String[][] data = getStudentData();
-		String[] columnNames = {"ID", "Name", "Early Bird", "Door Price"};
+		String[] columnNames = { "ID", "Name", "Early Bird", "Door Price" };
 		JDialog displayDlg = new JDialog();
 		displayDlg.setTitle("All Students");
-		displayDlg.setSize(300,400);
+		displayDlg.setSize(300, 400);
 		displayDlg.setLocationRelativeTo(this);
 		JTable studentTbl = new JTable(data, columnNames);
 		JScrollPane sp = new JScrollPane(studentTbl);
 		displayDlg.add(sp);
 		displayDlg.setVisible(true);
 	}
-	
-	private String[][] getStudentData(){
+
+	private String[][] getStudentData() {
 		Student.loadAll();
 		List<Student> studentList = new ArrayList<Student>();
 		traverseInOrder(Student.students.root, studentList);
 		int count = studentList.size();
 		String[][] data = new String[count][4];
-		for(int i=0; i<count; i++) {
+		for (int i = 0; i < count; i++) {
 			Student s = studentList.get(i);
-			data[i][0]=""+s.getId();
-			data[i][1]=s.getName();
-			data[i][2]=""+s.getEarlyBirdTickets();
-			data[i][3]=""+s.getDoorTickets();
+			data[i][0] = "" + s.getId();
+			data[i][1] = s.getName();
+			data[i][2] = "" + s.getEarlyBirdTickets();
+			data[i][3] = "" + s.getDoorTickets();
 		}
 		return data;
 	}
@@ -200,9 +250,13 @@ public class MainFrame extends AbstractFrame implements ActionListener {
 			traverseInOrder(current.right, list);
 		}
 	}
-	
+
 	public void setStatus(String status) {
 		statusTxt.setText(status);
+	}
+
+	public Properties getProp() {
+		return prop;
 	}
 
 	public static void main(String[] params) {

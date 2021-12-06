@@ -10,6 +10,12 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+/**
+ * this dialog window allow user refund ticket to student, and remove the student from storage file.
+ * 
+ * @author John
+ *
+ */
 public class RefundDialog extends JDialog implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	private MainFrame parent;

@@ -14,7 +14,7 @@
 4. allow student refund his/her tickets;
 5. allow display all students information on a table in the order of student id;
 6. if student does NOT exist while refund, the message will be displayed on status bar at the bottom.
-7. main window shall display part start time, duration, location and sponsor information
+7. main window shall display party start time, duration, location and sponsor information
 8. it is better to have help document for user.
 9. [Basic operation check: add, save, load, insert, remove ...](Test.java)
 10. ❓💡 What is the difference between add() and insert() method in BinaryTree?
@@ -35,6 +35,8 @@
 ✔️❓ Basic operations (implemented size, contains, add, insert, find, but only used add, find)
 ✔️ Advanced operation - remove() (BinaryTree.remove())
 ✔️ Use of a Tree data structure (BinaryTree.java)
+✔️ Use file I/O to load/save configuration (danceticket.properties) and data (tickets.csv)
+✔️ must incorporate your own data structure(s) (BinaryTree, Node, BinaryTree.insert)
 
 ## Class Diagram
 ```mermaid
@@ -199,3 +201,30 @@ C:\Users\12818\workspace\Rodney\java\doc\danceticket>javadoc -sourcepath ../../j
 Double click index.html file name
 
 ![](images/index-html.png)
+
+## Software include
+
+```mermaid
+graph LR
+
+A(Dance Ticket)
+B["User Interface (GUI)"]
+C[Business Logic]
+D[(Data Storage File)]
+E[Java Doc]
+F[Test]
+G[Java Logging]
+H["Software Delivery (jar)"]
+
+A --> B & C & D & E & F & G & H
+
+classDef start fill:green,stroke:#DE9E1F,stroke-width:2px,color:white;
+classDef db fill:#BEBDB7,stroke:black,stroke-width:2px;
+classDef html fill:#F46624,stroke:#F46624,stroke-width:4px,color:white;
+classDef if fill:#EBCD6F,stroke:black,stroke-width:2px;
+
+class A start
+class D db
+class B html
+class C if
+```

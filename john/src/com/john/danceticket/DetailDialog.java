@@ -102,7 +102,6 @@ public class DetailDialog extends JDialog implements ActionListener {
 			}
 			displayDetail(student);
 		}
-
 	}
 
 	private void displayDetail(Student student) {
