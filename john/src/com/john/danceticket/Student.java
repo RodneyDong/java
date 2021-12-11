@@ -21,6 +21,9 @@ public class Student implements Comparable<Student>{
 	private int id;
 	private String name;
 	private int earlyBirdTickets;
+	/**
+	 * number of door price tickets.
+	 */
 	private int doorTickets;
 	static BinaryTree students = new BinaryTree();
 	
@@ -41,6 +44,11 @@ public class Student implements Comparable<Student>{
 		this.earlyBirdTickets = earlyBirdTickets;
 	}
 
+	/**
+	 * this is a getter method for class attribute doorTicket.
+	 * 
+	 * @return return private attribute doorTickets for number of door price tickets.
+	 */
 	public int getDoorTickets() {
 		return doorTickets;
 	}
@@ -78,6 +86,9 @@ public class Student implements Comparable<Student>{
 		return myId.compareTo(other.getId());
 	}
 
+	/**
+	 * save() method save one student to storage file: ticket.csv
+	 */
 	public void save() {
 		try {
 			String output = id+","+name+","+earlyBirdTickets+","+this.doorTickets+"\n";
@@ -90,6 +101,9 @@ public class Student implements Comparable<Student>{
 		
 	}
 	
+	/**
+	 * Save all students information from BinaryTree to storage file named ticket.csv.
+	 */
 	public static void saveAll() {
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter(filename));

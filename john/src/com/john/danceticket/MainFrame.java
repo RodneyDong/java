@@ -32,6 +32,9 @@ import javax.swing.JTextField;
  * MainFrame include menu system and dance party information. allow user to sell
  * tickets to student, and refund their money and more.
  * 
+ * @see Student
+ * @see BinaryTree
+ * 
  * @author John
  *
  */
@@ -39,7 +42,10 @@ public class MainFrame extends AbstractFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private static final String PROP_FILE = "resources/danceticket.properties";
 	static {
-		System.setProperty("java.util.logging.config.file", "/Users/12818/workspace/Rodney/java/john/conf/logging.properties");
+//		System.setProperty("java.util.logging.config.file", "/Users/12818/workspace/Rodney/java/john/conf/logging.properties");
+		String path = MainFrame.class.getClassLoader().getResource("logging.properties").getFile();
+		System.out.println(path);
+		System.setProperty("java.util.logging.config.file", path);		
 //		System.setProperty("java.util.logging.ConsoleHandler.level", "java.util.logging.Level.WARNING");
 	}
 	static Logger logger = Logger.getLogger("DANCE_TICKET");
@@ -85,10 +91,10 @@ public class MainFrame extends AbstractFrame implements ActionListener {
 	private void loadProperties() {
 		logger.info("loadProperties() ...");
 		prop = new Properties();
-		URL propUrl = this.getClass().getResource(PROP_FILE);
-		try (InputStream input = new FileInputStream(propUrl.getFile())) {
+		InputStream in = MainFrame.class.getClassLoader().getResourceAsStream(PROP_FILE);
+		try {
 			// load a properties file
-			prop.load(input);
+			prop.load(in);
 		} catch (IOException ex) {
 			logger.severe(ex.getMessage());
 		}
@@ -97,7 +103,7 @@ public class MainFrame extends AbstractFrame implements ActionListener {
 	private JMenuBar buildMenu() {
 		ticket = new JMenu("Ticket");
 		earlyBird = new JMenuItem("Early Bird");
-		door = new JMenuItem("Door");
+		door = new JMenuItem("Door Price");
 		refund = new JMenuItem("Refund");
 		exit = new JMenuItem("Exit");
 

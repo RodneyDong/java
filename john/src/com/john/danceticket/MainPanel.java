@@ -9,6 +9,7 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -38,9 +39,9 @@ public class MainPanel extends JPanel {
 	public MainPanel(MainFrame parent) {
 		this.parent = parent;
 		String imageFile = parent.getProp().getProperty(IMAGE_FILE_PROP);
-		URL imgUrl = this.getClass().getResource(imageFile);
+		InputStream imgIn = MainPanel.class.getClassLoader().getResourceAsStream(imageFile);
 		try {
-			img = ImageIO.read(new File(imgUrl.getFile()));
+			img = ImageIO.read(imgIn);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

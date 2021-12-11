@@ -111,9 +111,9 @@ public class Test {
 //		testLoadAndSave();
 //		testFind();
 //		testInsert();
-//		testRemove();
+		testRemove();
 //		testLoadProperties();
-		testDateFormat();
+//		testDateFormat();
 	}
 
 }
