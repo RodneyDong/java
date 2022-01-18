@@ -217,7 +217,19 @@ input values must cover all possible input values
 * [Doubly Linked List](../john/src/com/john/myproject/DoublyLinkedList.java)
 ![](images/doublyLinkedList.png)
 * ![binary search](images/binarySearch.png)
-  
+
+* [Teolitz matrix java](../john/src/com/john/myproject/TeoplitzTest.java)
+
+[Toeplitz matrix](https://en.wikipedia.org/wiki/Toeplitz_matrix)
+$$ A_{i,j} = A_{i+1, j+1} $$
+> A Toeplitz matrix is not necessarily square.
+
+binary search worst case:
+$$f(n)=log_2 n $$
+$$O(log_2 N)$$
+
+$$f(n) = \frac {n+1} 2 = \frac 1 2 n + \frac 1 2$$
+
 ### Tree
 ![](images/tree-1.webp)
 

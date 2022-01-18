@@ -55,7 +55,7 @@ public class BinaryTree {
 		return bt;
 	}
 
-	private void insert(BinaryNode current, int value) {
+	public void insert(BinaryNode current, int value) {
 		if(current==null) {
 			root = new BinaryNode(value);
 			return;
